@@ -13,11 +13,12 @@
 // tCopy = [1, 2, 3, 4]
 
 export class makingCopies {
-    static copyList(numbers){
+    static copyList(list){
 
-        if(numbers.filter(element => typeof(element) !== 'number' ).length > 0 )
-            throw new Error("");
-
-        return numbers;
+        if (!Array.isArray(list)) {
+            throw new Error("L'argument doit être un tableau ou une liste.");
+        }
+    
+        return list.slice();
     }
 } 
